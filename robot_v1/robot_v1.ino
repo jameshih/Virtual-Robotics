@@ -3,7 +3,7 @@ Servo myservo1;
 Servo myservo2;
 Servo myservo3;
 Servo myservo4;
-int caseState ;
+int caseState;
 int interval = 100;
 int pos;
 int pos2;
@@ -13,7 +13,8 @@ float counter;
 float pingTime;
 float distance;
 float speedOfSound = 776.5;
-int timer= 50;
+int timer;
+boolean gameOn = false;
 
 void setup() {
   pinMode(trigPin, OUTPUT);

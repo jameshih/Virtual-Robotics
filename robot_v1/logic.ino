@@ -2,20 +2,23 @@ void logic() {
   long start = millis();
   switch (caseState) {
     case 0:
+    timer = 0;
       myservo1.write(180);
       myservo3.write(0);
       myservo2.write(0);
       myservo4.write(180);
       break;
     case 1:
+      
     myservo1.write(90);
       myservo3.write(90);
       myservo2.write(90);
       myservo4.write(90);
+    
       break;
 
     case 2:
-    timer =50;
+    timer = (int)random(5,100);
       counter = 128 + 127 * cos (0.25 * PI / interval * (interval - start));
       pos = map(counter, 0, 255, 40, 135);
       pos2 = map(counter, 0, 255, 135, 40);
