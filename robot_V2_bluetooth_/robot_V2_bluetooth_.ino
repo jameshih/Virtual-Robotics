@@ -14,7 +14,9 @@ float pingTime;
 float distance;
 float speedOfSound = 776.5;
 int timer;
-boolean gameOn = false;
+
+//bluetooth
+char val;
 
 void setup() {
   pinMode(trigPin, OUTPUT);
@@ -26,19 +28,29 @@ void setup() {
   Serial.begin(9600);
 }
 
+
 void loop() {
-if(distance <= 7){
-  caseState = 3;
-  timer--;
-  if(timer <=0 && distance <= 7){
-    caseState = 0;
+  if (Serial.available()) {
+    val = Serial.read();
   }
-}else{
-  caseState = 2;
-}
+  if (val == 'A') caseState = 0;
+  if (val == 'B') caseState = 1;
+  if (val == 'C') caseState = 2;
+  if (val == 'D') caseState = 3;
+  if (val == 'E') caseState = 4;
+  if (val == 'X') {
+    if (distance <= 7) {
+      caseState = 3;
+      timer--;
+      if (timer <= 0 && distance <= 7) {
+        caseState = 0;
+      }
+    } else {
+      caseState = 2;
+    }
+  }
   logic();
   proximity();
-  debug();
+  //debug();
 
 }
-

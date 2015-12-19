@@ -9,9 +9,4 @@ void proximity() {
   distance = speedOfSound * pingTime; 
   distance = distance / 2; 
   distance = distance * 63360;
-
-
 }
-
-
-
