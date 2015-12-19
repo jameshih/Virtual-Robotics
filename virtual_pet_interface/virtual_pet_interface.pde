@@ -26,7 +26,8 @@ boolean feedMeat = false;
 
 void setup() {
   size(600, 600);
-  port = new Serial(this, "/dev/cu.HC-05-DevB", 9600);
+  // reference: https://processing.org/reference/libraries/serial/Serial.html 
+  port = new Serial(this, "/dev/cu.HC-05-DevB", 9600); //establish bluetooth connection 
   println("Available serial ports:" + port);
   smooth();
   noStroke();
