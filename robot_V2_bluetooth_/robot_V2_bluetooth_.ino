@@ -39,10 +39,10 @@ void loop() {
   if (val == 'D') caseState = 3;
   if (val == 'E') caseState = 4;
   if (val == 'X') {
-    if (distance <= 7) {
+    if (distance <= 4) {
       caseState = 3;
       timer--;
-      if (timer <= 0 && distance <= 7) {
+      if (timer <= 0 && distance <= 4) {
         caseState = 0;
       }
     } else {
