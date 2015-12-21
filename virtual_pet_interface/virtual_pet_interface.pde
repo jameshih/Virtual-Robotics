@@ -2,8 +2,8 @@ import processing.serial.*;
 Serial port;
 
 int caseState;
-int duration = 1000;
-int interval = 200;
+int duration = 5000;
+int interval = 100;
 int health = 100;
 int happy =100;
 int selectState;
